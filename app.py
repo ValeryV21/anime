@@ -295,7 +295,9 @@ with tab_search:
                             st.rerun()
                 with c3:
                     if in_list:
-                        st.markdown(f"<span class='badge' style='background:{STATUS_COLORS[st.session_state.anime_list[mid][\"my_status\"]]}22;color:{STATUS_COLORS[st.session_state.anime_list[mid][\"my_status\"]]}'>In List ✓</span>", unsafe_allow_html=True)
+                        cur_status = st.session_state.anime_list[mid]["my_status"]
+                        cur_color = STATUS_COLORS[cur_status]
+                        st.markdown(f"<span class='badge' style='background:{cur_color}22;color:{cur_color}'>In List ✓</span>", unsafe_allow_html=True)
 
                 st.markdown("<hr style='border-color:#2a2a4a;margin:.5rem 0'>", unsafe_allow_html=True)
     elif st.session_state.search_query:
